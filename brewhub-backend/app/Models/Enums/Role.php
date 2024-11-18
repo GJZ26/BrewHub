@@ -4,6 +4,6 @@ namespace App\Models\Enums;
 
 enum Role: int
 {
-    case Admin =  0;
-    case Client = 1;
+    case Client = 0;
+    case Admin =  1;
 };

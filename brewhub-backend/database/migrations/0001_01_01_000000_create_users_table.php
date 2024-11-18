@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->boolean('isActive')->default(true);
             $table->string('password');
-            $table->tinyInteger('role');
+            $table->tinyInteger('role')->default(1);
             $table->timestamps();
         });
 
