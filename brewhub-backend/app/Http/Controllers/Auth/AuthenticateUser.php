@@ -24,15 +24,12 @@ class AuthenticateUser
                 ),
                 200
             );
-        } catch (ValidationException $validationException) {
-
-            return response()->json(["message" => "Credenciales incorrectas"])->setStatusCode(401);
         } catch (Exception $error) {
 
             Log::error('Error al autenticar al usuario', [
                 'exception' => $error->getMessage(),
             ]);
-            return response()->json(["message" => "Ha ocurrido un error al intentar iniciar sesión"])->setStatusCode(500);
+            return response()->json(["message" => "Crendenciales incorrectas."])->setStatusCode(401);
         }
     }
 
@@ -48,5 +45,4 @@ class AuthenticateUser
             return response()->json(['message' => 'Error al cerrar sesion'], 500);
         }
     }
-
 }

@@ -18,6 +18,8 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->alias([
             'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
+            'onlyAdmins' => \App\Http\Middleware\CheckAbility::class,
+            'simpleAuth' => \App\Http\Middleware\SimpleAuth::class
         ]);
 
         //
