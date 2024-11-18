@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SimpleAuth
 {
-    // Request manda vacío :(
     public function handle(Request $request, Closure $next): Response
     {
         if (! $request->user()) {

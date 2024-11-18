@@ -47,7 +47,7 @@ class UserController extends Controller
     }
 
     // nota: Si está probando en Postman, agregue "X-Requested-With: XMLHttpRequest" en el encabezado para que Laravel sepa que es una solicitud XHR.
-    // error solo presente en postman :(
+    // error solo presente en postman.
     public function store(UserStoreRequest $request)
     {
         $validated = $request->validated();
