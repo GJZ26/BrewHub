@@ -1,3 +1,4 @@
+import { FormEvent } from "react";
 import Button from "../atoms/Buttons";
 import LinkText from "../atoms/LinkText";
 import { Logo } from "../atoms/Logo";
@@ -5,10 +6,21 @@ import Paragraph from "../atoms/Paragraph";
 import Title from "../atoms/Title";
 import FormCheckbox from "../molecules/FormCheckbox";
 import FormInput from "../molecules/FormInput";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
+  const navigate = useNavigate();
+
+  function submitHandler(e: FormEvent) {
+    e.preventDefault();
+    navigate("/dashboard");
+  }
+
   return (
-    <form className="w-90 ml-20 bg-slate-50 p-6 rounded absolute left-0 top-1/2 transform -translate-y-1/2">
+    <form
+      className="w-90 ml-20 bg-slate-50 p-6 rounded absolute left-0 top-1/2 transform -translate-y-1/2"
+      onSubmit={submitHandler}
+    >
       <Logo />
       <Title>Bienvenido a BrewHub</Title>
 

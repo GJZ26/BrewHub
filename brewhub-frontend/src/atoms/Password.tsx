@@ -20,16 +20,7 @@ export default function Password({ placeholder }: { placeholder: string }) {
       <button
         type="button"
         onClick={togglePasswordVisibility}
-        className="
-        absolute 
-        inset-y-0 
-        translate-y-1
-        -translate-x-1
-        right-2 
-        flex 
-        items-center 
-        text-gray-400 
-        focus:outline-none"
+        className="absolute inset-y-0 translate-y-1 -translate-x-1 right-2 flex items-center text-gray-400 focus:outline-none"
       >
         {showPassword ? (
           <EyeOffIcon className="h-5 w-5" />
