@@ -1,4 +1,4 @@
-import { DataSorted, SortableKey } from "../../organisms/UserTable";
+import { DataSorted, SortableKey } from "../../shared/interface/Sortable";
 import ArrowDownIcon from "../icons/ArrowDonwIcon";
 import ArrowUpIcon from "../icons/ArrowUpIcon";
 
