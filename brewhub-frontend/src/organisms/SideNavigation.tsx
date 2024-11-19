@@ -20,7 +20,7 @@ export default function SideNavigation({ className }: { className?: string }) {
         text="Cerrar Sesión"
         to="/logout"
         disabled={false}
-        className="text-orange-100 text-sm ml-2 opacity-80"
+        className="text-orange-100 text-sm ml-2 opacity-80 hover:opacity-100 transition-colors"
       />
     </nav>
   );

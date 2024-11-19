@@ -15,7 +15,7 @@ export default function NavigationButton({
   className?: string;
 }) {
   const sharedClass =
-    "flex flex-row gap-2 font-sm text-white mb-5 ";
+    "flex flex-row gap-2 font-sm p-2 text-white mb-5 ";
   if (disabled) {
     return (
       <p
@@ -36,7 +36,7 @@ export default function NavigationButton({
       className={({ isActive }) =>
         `${sharedClass} cursor-pointer ${
           isActive ? "bg-orange-300" : ""
-        } bg-opacity-85 hover:bg-opacity-100 transition-colors rounded p-1 ${className}`
+        } bg-opacity-85 hover:bg-opacity-100 transition-colors rounded ${className}`
       }
     >
       {icon}
