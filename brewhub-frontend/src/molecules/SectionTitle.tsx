@@ -1,5 +1,5 @@
-import Paragraph from "../atoms/Paragraph";
-import Title from "../atoms/Title";
+import Paragraph from "../atoms/display/Paragraph";
+import Title from "../atoms/display/Title";
 import NotificationButton from "./NotificationButton";
 
 export default function SectionTitle() {

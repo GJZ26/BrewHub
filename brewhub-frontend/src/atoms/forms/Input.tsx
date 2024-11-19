@@ -2,10 +2,14 @@ export default function Input({
   type,
   placeholder,
   defaultValue,
+  onInput,
+  required,
 }: {
   type: React.HTMLInputTypeAttribute;
   placeholder: string;
   defaultValue: string | number | readonly string[];
+  onInput: React.FormEventHandler<HTMLInputElement>;
+  required: boolean;
 }) {
   return (
     <input
@@ -13,6 +17,8 @@ export default function Input({
       type={type}
       placeholder={placeholder}
       defaultValue={defaultValue}
+      onInput={onInput}
+      required={required}
     ></input>
   );
 }

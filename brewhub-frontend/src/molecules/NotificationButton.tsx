@@ -1,4 +1,4 @@
-import NotificationIcon from "../atoms/NotificationIcon";
+import NotificationIcon from "../atoms/icons/NotificationIcon";
 
 export default function NotificationButton() {
   return (

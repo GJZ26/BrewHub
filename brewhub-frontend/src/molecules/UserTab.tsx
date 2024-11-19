@@ -1,4 +1,4 @@
-import Avatar from "../atoms/Avatar";
+import Avatar from "../atoms/media/Avatar";
 
 const roles = ["Client", "Admin"];
 

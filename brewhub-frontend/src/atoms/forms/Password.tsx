@@ -1,8 +1,18 @@
 import { useState } from "react";
-import EyeOffIcon from "./EyeOffIcon";
-import EyeIcon from "./EyeIcon";
+import EyeOffIcon from "../icons/EyeOffIcon";
+import EyeIcon from "../icons/EyeIcon";
 
-export default function Password({ placeholder }: { placeholder: string }) {
+export default function Password({
+  placeholder,
+  onInput,
+  required,
+  defaultValue,
+}: {
+  placeholder: string;
+  onInput: React.FormEventHandler<HTMLInputElement>;
+  required: boolean;
+  defaultValue: string;
+}) {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -12,9 +22,12 @@ export default function Password({ placeholder }: { placeholder: string }) {
   return (
     <div className="relative">
       <input
-        className="bg-amber-600 bg-opacity-10 p-2 border border-gray-300 rounded placeholder:font-normal outline-none focus:outline-none focus:ring-1 focus:ring-orange-200 text-xs mt-2 pr-10 w-full"
+        className="bg-amber-600 bg-opacity-10 p-2  rounded placeholder:font-normal outline-none focus:outline-none focus:ring-1 focus:ring-orange-200 text-xs mt-2 pr-10 w-full"
         type={showPassword ? "text" : "password"}
         placeholder={placeholder}
+        onInput={onInput}
+        required={required}
+        defaultValue={defaultValue}
       />
 
       <button

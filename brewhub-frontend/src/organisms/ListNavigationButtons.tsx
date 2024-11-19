@@ -1,8 +1,8 @@
-import DashboardIcon from "../atoms/DashboardIcon";
-import InvenotryIcon from "../atoms/InventoryIcon";
-import ProductsIcon from "../atoms/ProductsIcon";
-import SalesIcon from "../atoms/SalesIcon";
-import UsersIcon from "../atoms/UsersIcon";
+import DashboardIcon from "../atoms/icons/DashboardIcon";
+import InvenotryIcon from "../atoms/icons/InventoryIcon";
+import ProductsIcon from "../atoms/icons/ProductsIcon";
+import SalesIcon from "../atoms/icons/SalesIcon";
+import UsersIcon from "../atoms/icons/UsersIcon";
 import NavigationButton from "../molecules/NavigationButton";
 
 export default function ListNavigationButtons() {
