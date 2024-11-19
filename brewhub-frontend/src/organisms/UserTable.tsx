@@ -1,7 +1,11 @@
+import { useState } from "react";
+import ArrowDownIcon from "../atoms/ArrowDonwIcon";
+import ArrowUpIcon from "../atoms/ArrowUpIcon";
 import EditIcon from "../atoms/EditIcon";
 import Title from "../atoms/Title";
 import TrashIcon from "../atoms/TrashIcon";
 import SearchInput from "../molecules/SearchInput";
+import Modal from "./Modal";
 
 const demos = [
   {
@@ -141,6 +145,9 @@ function ToggleSwitch({
 }
 
 export default function UserTable() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState<any>(undefined);
+
   const toggleActive = (id: number) => {
     const user = demos.find((u) => u.id === id);
     if (user) {
@@ -150,6 +157,7 @@ export default function UserTable() {
 
   return (
     <div className="p-4 bg-white my-3 mx-4 shadow-md rounded-sm">
+      <Modal isActive={isModalOpen} setIsActive={setIsModalOpen} user={currentUser}/>
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <Title>Usuarios</Title>
@@ -159,10 +167,19 @@ export default function UserTable() {
       <table className="w-full border-collapse text-left">
         <thead className="bg-yellow-950 text-white">
           <tr>
-            <th className="px-5 py-2 font-normal text-sm">Nombre</th>
-            <th className="px-5 py-2 font-normal text-sm">Correo</th>
-            <th className="px-5 py-2 font-normal text-sm">Fecha de creación</th>
-            <th className="px-5 py-2 font-normal text-sm">Acciones</th>
+            <th className="px-5 py-2 font-normal text-sm">
+              Nombre
+              <ArrowDownIcon />
+            </th>
+            <th className="px-5 py-2 font-normal text-sm">
+              Correo <ArrowUpIcon />
+            </th>
+            <th className="px-5 py-2 font-normal text-sm">
+              Fecha de creación <ArrowDownIcon />
+            </th>
+            <th className="px-5 py-2 font-normal text-sm">
+              Acciones <ArrowDownIcon />
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -181,7 +198,13 @@ export default function UserTable() {
                   isActive={user.isActive}
                   onChange={() => toggleActive(user.id)}
                 />
-                <button className="hover:text-yellow-900 transition-colors">
+                <button
+                  className="hover:text-yellow-900 transition-colors"
+                  onClick={() => {
+                    setIsModalOpen(true);
+                    setCurrentUser(user);
+                  }}
+                >
                   <EditIcon />
                 </button>
                 <button className="hover:text-yellow-900 transition-colors">
