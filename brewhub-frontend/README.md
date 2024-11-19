@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# Guía de instalación: Front-end (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+El cliente del sistema utiliza React con Vite como empaquetador. Sigue los pasos a continuación para configurarlo.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Requisitos
 
-## Expanding the ESLint configuration
+Asegúrate de tener instaladas las siguientes herramientas en tu sistema:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Node.js** v20 o superior
+- **npm** v10 o superior
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+#### Pasos de instalación
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. **Clonar el repositorio**  
+   Abre una terminal y clona el proyecto:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+   ```bash
+   git clone https://github.com/GJZ26/BrewHub.git
+   cd BrewHub/brewhub-frontend
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. **Instalar dependencias**  
+   Usa `npm` para instalar todas las dependencias necesarias:
+
+   ```bash
+   npm install
+   ```
+
+3. **Configurar el host de la API**  
+    Por defecto, la aplicación siempre apunta a http://localhost:8000, pero puede ser configurada en el archivo `src/shared/config/app.config.ts`
+
+   ```typescript
+   export const config = {
+     api_protocol: "http",
+     api_host: "localhost",
+     api_port: "8000",
+   };
+   ```
+
+4. **Iniciar el servidor de desarrollo**  
+   Ejecuta el siguiente comando para iniciar la aplicación:
+
+   ```bash
+   npm run dev
+   ```
+
+   La aplicación estará disponible en [http://localhost:3000](http://localhost:3000) por defecto.
+
+   Puedes cambiar el puerto de ejecución desde el archivo `vite.config.ts`, pero implica agregar ese origen al archivo de cors de php en el archivo `.env` o desde `brewhub-backend\config\cors.php`
+
+---

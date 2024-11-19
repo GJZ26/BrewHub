@@ -4,6 +4,8 @@ Este es el monorepo para **BrewHub**, parte de una prueba práctica desarrollado
 
 ---
 
+![Capuura del dashboard](./docs/image.png)
+
 ## Requisitos
 
 ### Back-end
