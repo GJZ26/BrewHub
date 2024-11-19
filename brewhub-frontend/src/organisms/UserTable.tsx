@@ -127,7 +127,7 @@ function ToggleSwitch({
   return (
     <div
       className={`w-10 h-5 flex items-center rounded-full p-1 cursor-pointer ${
-        isActive ? "bg-orange-500" : "bg-gray-300"
+        isActive ? "bg-orange-800" : "bg-gray-300"
       }`}
       onClick={onChange}
     >
@@ -149,20 +149,20 @@ export default function UserTable() {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 bg-white my-3 mx-4 shadow-md rounded-sm">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <Title>Usuarios</Title>
         <SearchInput placeholder="Buscar usuarios" />
       </div>
       {/* Table */}
-      <table className="w-full border-collapse text-left bg-white">
+      <table className="w-full border-collapse text-left">
         <thead className="bg-yellow-950 text-white">
           <tr>
-            <th className="px-5 py-2 font-normal">Nombre</th>
-            <th className="px-5 py-2 font-normal">Correo</th>
-            <th className="px-5 py-2 font-normal">Fecha de creación</th>
-            <th className="px-5 py-2 font-normal">Acciones</th>
+            <th className="px-5 py-2 font-normal text-sm">Nombre</th>
+            <th className="px-5 py-2 font-normal text-sm">Correo</th>
+            <th className="px-5 py-2 font-normal text-sm">Fecha de creación</th>
+            <th className="px-5 py-2 font-normal text-sm">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -171,18 +171,20 @@ export default function UserTable() {
               key={user.id}
               className="border-t border-gray-200 hover:bg-gray-50 even:bg-yellow-800 even:bg-opacity-5"
             >
-              <td className="py-3 px-5">{user.name}</td>
-              <td className="py-3 px-5">{user.email}</td>
-              <td className="py-3 px-5">{formatDate(user.createdAt)}</td>
-              <td className="py-3 px-5 flex items-center gap-2">
+              <td className="py-3 px-5 text-sm">{user.name}</td>
+              <td className="py-3 px-5 text-sm">{user.email}</td>
+              <td className="py-3 px-5 text-sm">
+                {formatDate(user.createdAt)}
+              </td>
+              <td className="py-3 px-5 flex items-center gap-2 text-yellow-950">
                 <ToggleSwitch
                   isActive={user.isActive}
                   onChange={() => toggleActive(user.id)}
                 />
-                <button className="text-blue-500 hover:text-blue-700">
+                <button className="hover:text-yellow-900 transition-colors">
                   <EditIcon />
                 </button>
-                <button className="text-red-500 hover:text-red-700">
+                <button className="hover:text-yellow-900 transition-colors">
                   <TrashIcon />
                 </button>
               </td>
