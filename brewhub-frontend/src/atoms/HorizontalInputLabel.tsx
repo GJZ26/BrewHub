@@ -8,7 +8,7 @@ export default function HorizontalInputLabel({
   text: string;
 }) {
   return (
-    <label className="flex flex-row-reverse justify-end space-y-2 font-medium text-xs mb-4">
+    <label className="flex flex-row-reverse justify-end space-y-2 font-medium text-xs mb-4 text-orange-950">
       {text}
       {children}
     </label>

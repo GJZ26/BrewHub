@@ -28,19 +28,21 @@ export default function LoginForm() {
         Ingresa tu correo y tu contraseña para iniciar sesión.
       </Paragraph>
 
-      <FormInput
-        type="email"
-        placeholder="Escribe tu correo electrónico"
-        label="Correo electrónico"
-      />
+      <div className="mt-6">
+        <FormInput
+          type="email"
+          placeholder="Escribe tu correo electrónico"
+          label="Correo electrónico"
+        />
 
-      <FormInput
-        type="password"
-        placeholder="Escribe tu contraseña"
-        label="Contraseña"
-      />
+        <FormInput
+          type="password"
+          placeholder="Escribe tu contraseña"
+          label="Contraseña"
+        />
+      </div>
 
-      <div className="flex justify-between mb-8 mt-3">
+      <div className="flex justify-between mb-3 mt-5">
         <FormCheckbox text="Recuérdame" defaultChecked={true} />
         <LinkText to="/reset-password" text="¿Olvidaste tu contraseña?" />
       </div>
