@@ -21,7 +21,7 @@ export default function LoginForm() {
       className="w-90 ml-20 bg-slate-50 p-6 rounded absolute left-0 top-1/2 transform -translate-y-1/2"
       onSubmit={submitHandler}
     >
-      <Logo />
+      <Logo className="mx-auto w-24" version="color" />
       <Title>Bienvenido a BrewHub</Title>
 
       <Paragraph>

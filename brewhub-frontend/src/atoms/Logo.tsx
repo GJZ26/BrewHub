@@ -1,5 +1,14 @@
-export function Logo(){
-    return(
-        <img src="/brewhub-color.png" className="mx-auto w-24"/>
-    )
+const resources = {
+  color: "/brewhub-color.png",
+  white: "/brewhub-white.png",
+};
+
+export function Logo({
+  version,
+  className,
+}: {
+  version: "color" | "white";
+  className?: string;
+}) {
+  return <img src={resources[version]} className={className} />;
 }
