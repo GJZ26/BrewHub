@@ -1,6 +1,7 @@
 import { HTMLInputTypeAttribute } from "react";
 import Input from "../atoms/Input";
 import VerticalInputLabel from "../atoms/VerticalInputLabel";
+import Password from "../atoms/Password";
 
 export default function FormInput({
   type,
@@ -13,13 +14,15 @@ export default function FormInput({
   label: string;
   defaultValue?: string | number | readonly string[];
 }) {
-  return (
-    <VerticalInputLabel text={label}>
+  const input =
+    type === "password" ? (
+      <Password placeholder={placeholder as string} />
+    ) : (
       <Input
         type={type}
         placeholder={placeholder ?? ""}
         defaultValue={defaultValue ?? ""}
       />
-    </VerticalInputLabel>
-  );
+    );
+  return <VerticalInputLabel text={label}>{input}</VerticalInputLabel>;
 }
